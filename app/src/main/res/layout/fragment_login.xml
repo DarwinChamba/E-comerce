@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    tools:context=".ui.fragment.LoginFragment">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_marginHorizontal="20dp"
+       android:layout_height="match_parent">
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/topGude"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.30" />
+
+       <EditText
+           android:id="@+id/emailLogin"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Email"
+           app:layout_constraintTop_toTopOf="@id/topGude" />
+
+       <EditText
+           android:id="@+id/passwordLogin"
+           style="@style/editText"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:hint="Password"
+           app:layout_constraintTop_toBottomOf="@id/emailLogin" />
+
+       <TextView
+           android:id="@+id/forgotPassword"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:padding="10dp"
+           android:text="Forgot your password"
+           android:textStyle="bold"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/passwordLogin" />
+
+       <androidx.appcompat.widget.AppCompatButton
+           android:id="@+id/loginLogin"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:text="Ingresar"
+           android:textSize="25sp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/forgotPassword"
+           tools:ignore="MissingClass" />
+
+       <ImageView
+           android:id="@+id/facebook"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:src="@drawable/facebook_login"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/loginLogin" />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Facebook"
+           app:layout_constraintBottom_toBottomOf="@id/facebook"
+           app:layout_constraintEnd_toEndOf="@id/facebook"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="@id/facebook" />
+
+       <ImageView
+           android:id="@+id/google"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:src="@drawable/google_login"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/loginLogin" />
+
+       <TextView
+           android:layout_width="wrap_content"
+
+           android:layout_height="wrap_content"
+           android:text="Google"
+           app:layout_constraintBottom_toBottomOf="@id/google"
+           app:layout_constraintEnd_toEndOf="@id/google"
+           app:layout_constraintStart_toStartOf="@id/google"
+           app:layout_constraintTop_toTopOf="@id/google" />
+       <ProgressBar
+           android:id="@+id/progressBar"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           android:visibility="gone"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

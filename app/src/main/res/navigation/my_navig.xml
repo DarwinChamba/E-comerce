@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navig"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_secondFragment"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/anim_bottom"
+            app:popEnterAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_secondFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/to_rigth" />
+        <action
+            android:id="@+id/action_secondFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/to_rigth" />
+    </fragment>
+</navigation>
