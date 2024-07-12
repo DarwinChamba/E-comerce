@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.InicioFragment">
+    tools:context=".ui.fragment.fragmentLogin.InicioFragment">
 
   <ImageView
       android:id="@+id/image1"
@@ -85,5 +85,14 @@
         app:layout_constraintStart_toStartOf="@id/startGuie"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_height="wrap_content"/>
+  <ProgressBar
+      android:id="@+id/progressBar"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

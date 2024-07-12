@@ -1,4 +1,4 @@
-package app.aplicacion.e_commerse.ui.fragmentShopping
+package app.aplicacion.e_commerse.ui.fragment.fragmentShopping
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,14 +8,16 @@ import android.view.ViewGroup
 import app.aplicacion.e_commerse.R
 import app.aplicacion.e_commerse.databinding.FragmentHomeBinding
 import app.aplicacion.e_commerse.ui.adapter.adapterFragment.CategoryFragmentAdapter
-import app.aplicacion.e_commerse.ui.fragmentShopping.categoryFragment.ChairFragment
-import app.aplicacion.e_commerse.ui.fragmentShopping.categoryFragment.CuoboardFragment
-import app.aplicacion.e_commerse.ui.fragmentShopping.categoryFragment.FurnitureFragement
-import app.aplicacion.e_commerse.ui.fragmentShopping.categoryFragment.MainCategoryFragment
-import app.aplicacion.e_commerse.ui.fragmentShopping.categoryFragment.TableFragment
+import app.aplicacion.e_commerse.ui.fragment.fragmentShopping.categoryFragment.ChairFragment
+import app.aplicacion.e_commerse.ui.fragment.fragmentShopping.categoryFragment.CuoboardFragment
+import app.aplicacion.e_commerse.ui.fragment.fragmentShopping.categoryFragment.FurnitureFragement
+import app.aplicacion.e_commerse.ui.fragment.fragmentShopping.categoryFragment.MainCategoryFragment
+import app.aplicacion.e_commerse.ui.fragment.fragmentShopping.categoryFragment.TableFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
 private lateinit var binding:FragmentHomeBinding
@@ -36,6 +38,7 @@ private lateinit var binding:FragmentHomeBinding
             TableFragment(),
             FurnitureFragement()
         )
+        binding.viewPager2.isUserInputEnabled=false
         val adapter=CategoryFragmentAdapter(list,childFragmentManager,lifecycle)
         binding.viewPager2.adapter=adapter
         TabLayoutMediator(binding.tabLayout,binding.viewPager2){ tab: TabLayout.Tab, position: Int ->

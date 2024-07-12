@@ -1,4 +1,4 @@
-package app.aplicacion.e_commerse.ui.fragmentShopping.categoryFragment
+package app.aplicacion.e_commerse.ui.fragment.fragmentShopping
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import app.aplicacion.e_commerse.R
 
+class CartFragment : Fragment() {
 
-open class BaseCategoryFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_base_category, container, false)
+        return inflater.inflate(R.layout.fragment_cart, container, false)
     }
 
 

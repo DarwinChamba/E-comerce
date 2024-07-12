@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="app.aplicacion.e_commerse.ui.fragment.RegisterFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.fragmentLogin.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="app.aplicacion.e_commerse.ui.fragment.LoginFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.fragmentLogin.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/inicioFragment"
-        android:name="app.aplicacion.e_commerse.ui.fragment.InicioFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.fragmentLogin.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="app.aplicacion.e_commerse.ui.fragment.SecondFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.fragmentLogin.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second">
         <action

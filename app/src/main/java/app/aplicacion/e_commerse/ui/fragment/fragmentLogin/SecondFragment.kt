@@ -1,4 +1,4 @@
-package app.aplicacion.e_commerse.ui.fragment
+package app.aplicacion.e_commerse.ui.fragment.fragmentLogin
 
 import android.os.Bundle
 import android.view.LayoutInflater

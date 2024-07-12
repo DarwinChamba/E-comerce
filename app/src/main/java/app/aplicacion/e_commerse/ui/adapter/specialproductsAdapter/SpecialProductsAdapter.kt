@@ -30,8 +30,12 @@ class SpecialProductsAdapter : RecyclerView.Adapter<SpecialProductsViewHolder>()
 
     override fun getItemCount()=diff.currentList.size
 
+    private var product:((Products)->Unit)?=null
+    fun setOnClickSpecialProducts(productSelected:((Products)->Unit)?){
+        product=productSelected
+    }
     override fun onBindViewHolder(holder: SpecialProductsViewHolder, position: Int) {
-        holder.renderSpecilaProducts(diff.currentList[position])
+        holder.renderSpecilaProducts(diff.currentList[position],product)
     }
 
 }

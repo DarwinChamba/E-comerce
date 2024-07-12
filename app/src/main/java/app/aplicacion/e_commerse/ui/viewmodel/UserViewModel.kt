@@ -31,7 +31,7 @@ class UserViewModel @Inject constructor(
     private val repositoryImpl: UserRepositoryImpl,
     private val data: DataRepositoryImpl
 ) : ViewModel() {
-    var datosFunciona: FirebaseUser? = null
+    var user: FirebaseUser? = null
 
     private val listaSignIn = MutableSharedFlow<FirebaseState<FirebaseUser>?>()
     val _listSignIn= listaSignIn.asSharedFlow()
@@ -44,13 +44,11 @@ class UserViewModel @Inject constructor(
     private val flowData = MutableStateFlow<StateFirebase<User>?>(null)
     val _flowData: Flow<StateFirebase<User>?> = flowData
 
-
-    private val _validation = Channel<RegisterFieldState>()
-    val validation = _validation.receiveAsFlow()
-
     private val _sharedPassword= MutableSharedFlow<StateFirebase<String>>()
     val sharedPassword=_sharedPassword.asSharedFlow()
 
+    private val _validation = Channel<RegisterFieldState>()
+    val validation = _validation.receiveAsFlow()
 
     fun createEmail(userCurrent: User) {
         if (validateCredentianls(userCurrent)) {

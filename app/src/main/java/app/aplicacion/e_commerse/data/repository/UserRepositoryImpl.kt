@@ -21,13 +21,7 @@ class UserRepositoryImpl @Inject constructor(
 
     override val currentUser: FirebaseUser?
         get() = auth.currentUser
-/*
-    override suspend fun insertUserStore(user: User) {
-        user.id = currentUser!!.uid
-        reference.child(user.id).setValue(user)
-    }
 
- */
 
     override suspend fun createEmailAndPassword(user: User): StateFirebase<FirebaseUser> {
         try {
@@ -50,6 +44,7 @@ class UserRepositoryImpl @Inject constructor(
             val result = auth.signInWithEmailAndPassword(email,password).await()
             state.invoke(FirebaseState.Success(result.user))
         } catch (e: Exception) {
+            e.printStackTrace()
             state.invoke(FirebaseState.Failure(e.message.toString()))
         }
 
@@ -68,6 +63,7 @@ class UserRepositoryImpl @Inject constructor(
             state.invoke(StateFirebase.Succes(email))
 
         }catch (e:Exception){
+            e.printStackTrace()
             state.invoke(StateFirebase.Error(e.message.toString()))
         }
     }

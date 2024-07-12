@@ -1,4 +1,4 @@
-package app.aplicacion.e_commerse.ui.fragment
+package app.aplicacion.e_commerse.ui.fragment.fragmentLogin
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,11 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
-import app.aplicacion.e_commerse.R
 import app.aplicacion.e_commerse.core.ToastM
 import app.aplicacion.e_commerse.core.dialogPersonalizado
 import app.aplicacion.e_commerse.core.hide
@@ -22,9 +19,6 @@ import app.aplicacion.e_commerse.util.FirebaseState
 import app.aplicacion.e_commerse.util.StateFirebase
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.map
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {

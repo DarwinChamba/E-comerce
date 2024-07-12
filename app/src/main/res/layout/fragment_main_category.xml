@@ -3,75 +3,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragmentShopping.categoryFragment.MainCategoryFragment">
+    tools:context=".ui.fragment.fragmentShopping.categoryFragment.MainCategoryFragment">
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nextedCategoryMainFragment"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:fillViewport="true"
-        android:layout_height="match_parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <ProgressBar
-                android:id="@+id/progresBarCategry"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_width="wrap_content"
-                android:indeterminateTint="#1C78C2"
-                android:layout_height="wrap_content"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerSpecialProducts"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/pbSpecialProducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/recyclerSpecialProducts"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/recyclerSpecialProducts" />
+
+
             <TextView
                 android:id="@+id/bestDeals"
-                app:layout_constraintTop_toBottomOf="@id/recyclerSpecialProducts"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:textSize="20sp"
-                android:text="Best Deals"
-                android:padding="10dp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintBottom_toTopOf="@id/recyclerBestDeals"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Best Deals"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/recyclerBestDeals"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerSpecialProducts" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerBestDeals"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bestDeals"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bestDeals" />
+
+            <ProgressBar
+                android:id="@+id/pbBestDeals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/recyclerBestDeals"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/recyclerBestDeals" />
+
 
             <TextView
                 android:id="@+id/bestProducts"
-                app:layout_constraintTop_toBottomOf="@id/recyclerBestDeals"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:textSize="20sp"
-                android:text="Best Deals"
-                android:padding="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Best Products"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerBestDeals" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerBestProducts"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bestProducts"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:overScrollMode="never"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bestProducts" />
+
+            <ProgressBar
+                android:id="@+id/pbProducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/recyclerBestProducts"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/recyclerBestProducts" />
+
+
+            <ProgressBar
+                android:id="@+id/pbPagging"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/recyclerBestProducts"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="15dp"/>
+              />
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

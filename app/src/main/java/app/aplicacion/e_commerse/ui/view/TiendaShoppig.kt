@@ -7,7 +7,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import app.aplicacion.e_commerse.R
 import app.aplicacion.e_commerse.databinding.ActivityTiendaShoppigBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TiendaShoppig : AppCompatActivity() {
     private lateinit var binding:ActivityTiendaShoppigBinding
     private lateinit var navController: NavController
@@ -20,7 +22,7 @@ class TiendaShoppig : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        navController=findNavController(R.id.fragmentContainer)
+        navController=findNavController(R.id.fragmentContainerView)
         binding.bottomNavigation.setupWithNavController(navController)
 
     }

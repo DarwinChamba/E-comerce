@@ -7,34 +7,54 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="app.aplicacion.e_commerse.ui.fragmentShopping.HomeFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.fragmentShopping.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="app.aplicacion.e_commerse.ui.fragmentShopping.SearchFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.fragmentShopping.SearchFragment"
         android:label="Search"
         tools:layout="@layout/fragment_search" >
         <action
             android:id="@+id/action_searchFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
-        android:name="app.aplicacion.e_commerse.ui.fragmentShopping.CartFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.fragmentShopping.CartFragment"
         android:label="Cart"
         tools:layout="@layout/fragment_cart" >
         <action
             android:id="@+id/action_cartFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="app.aplicacion.e_commerse.ui.fragmentShopping.ProfileFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.fragmentShopping.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="app.aplicacion.e_commerse.ui.fragment.fragmentShopping.fragmentDeatails.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+
+
+        <argument
+            android:name="products"
+            app:argType="app.aplicacion.e_commerse.data.model.Products" />
+    </fragment>
 </navigation>
