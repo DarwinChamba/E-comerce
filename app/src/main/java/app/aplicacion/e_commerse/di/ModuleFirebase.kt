@@ -1,5 +1,6 @@
 package app.aplicacion.e_commerse.di
 
+import app.aplicacion.e_commerse.data.model.FirebaseCommon
 import app.aplicacion.e_commerse.data.repository.UserRepository
 import app.aplicacion.e_commerse.data.repository.UserRepositoryImpl
 import com.google.firebase.auth.FirebaseAuth
@@ -36,6 +37,11 @@ object ModuleFirebase {
     @Singleton
 
     fun providesRepository(auth:FirebaseAuth):UserRepository =UserRepositoryImpl(auth)
+
+    @Provides
+    @Singleton
+
+    fun providesFirebaseCommon( database: FirebaseDatabase, auth: FirebaseAuth)=FirebaseCommon(database,auth)
 
 
 }

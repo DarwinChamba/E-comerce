@@ -69,6 +69,8 @@ class SizesAdapter:RecyclerView.Adapter<SizesAdapter.SizeViewHolder>() {
         }
     }
     var onItemClick:((String)->Unit)?= null
+
+
 }
 
 
