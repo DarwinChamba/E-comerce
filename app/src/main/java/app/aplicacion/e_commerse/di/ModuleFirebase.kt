@@ -4,9 +4,8 @@ import app.aplicacion.e_commerse.data.model.FirebaseCommon
 import app.aplicacion.e_commerse.data.repository.UserRepository
 import app.aplicacion.e_commerse.data.repository.UserRepositoryImpl
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,6 +41,11 @@ object ModuleFirebase {
     @Singleton
 
     fun providesFirebaseCommon( database: FirebaseDatabase, auth: FirebaseAuth)=FirebaseCommon(database,auth)
+
+    @Provides
+    @Singleton
+    fun providesStorage()=FirebaseStorage.getInstance().reference
+
 
 
 }

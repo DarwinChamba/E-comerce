@@ -10,7 +10,7 @@ import com.google.firebase.database.MutableData
 import com.google.firebase.database.Transaction
 import com.google.firebase.database.ValueEventListener
 
-class FirebaseCommon(
+class  FirebaseCommon(
     private val database: FirebaseDatabase,
     private val auth: FirebaseAuth
 

@@ -43,7 +43,7 @@ open class BaseCategoryFragment : Fragment() {
     private fun sendBestProducts() {
         bestProductAdapter.setOnClickHereniaProducts {
             val bundle=Bundle().apply {
-                putSerializable("products",it)
+                putParcelable("products",it)
             }
             findNavController().navigate(R.id.action_homeFragment_to_detailsFragment,bundle)
         }
@@ -52,7 +52,7 @@ open class BaseCategoryFragment : Fragment() {
     private fun sendOfferProducts() {
         offerAdapter.setOnClickHereniaProducts {
             val bundle=Bundle().apply {
-                putSerializable("products",it)
+                putParcelable("products",it)
             }
             findNavController().navigate(R.id.action_homeFragment_to_detailsFragment,bundle)
         }

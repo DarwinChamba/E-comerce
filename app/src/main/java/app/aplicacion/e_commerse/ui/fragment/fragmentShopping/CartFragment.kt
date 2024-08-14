@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.aplicacion.e_commerse.R
@@ -27,6 +28,8 @@ class CartFragment : Fragment() {
 
     private val cartProductAdapter by lazy { CartProductAdapter() }
     private val viewModel by activityViewModels<CartViewModel>()
+    var totalPrice = 0f
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +44,7 @@ class CartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         setupCartRv()
         observePrice()
         observeCart()
@@ -52,11 +56,18 @@ class CartFragment : Fragment() {
         }
         observeDeleteDialog()
         navigateDetails()
+        binding.buttonCheckout.setOnClickListener {
+            val action = CartFragmentDirections.actionCartFragmentToBillingFragment(
+                totalPrice,
+                cartProductAdapter.lista.toTypedArray(),true
+            )
+            findNavController().navigate(action)
+        }
     }
 
     private fun observeDeleteDialog() {
         lifecycleScope.launchWhenStarted {
-            viewModel.deleteDialog.collectLatest {cartProduct->
+            viewModel.deleteDialog.collectLatest { cartProduct ->
                 val alertDialog = AlertDialog.Builder(requireContext()).apply {
                     setTitle("Delete item from cart")
                     setMessage("Do you want to delete this item from your cart?")
@@ -77,7 +88,7 @@ class CartFragment : Fragment() {
     private fun navigateDetails() {
         cartProductAdapter.setOnClickBestProducts { cartProduct ->
             val b = Bundle().apply {
-                putSerializable("products", cartProduct.products)
+                putParcelable("products", cartProduct.products)
             }
             findNavController().navigate(R.id.action_cartFragment_to_detailsFragment, b)
         }
@@ -88,6 +99,7 @@ class CartFragment : Fragment() {
         lifecycleScope.launchWhenStarted {
             viewModel.productPrice.collectLatest {
                 it?.let {
+                    totalPrice = it
                     binding.tvTotalPrice.text = "$ $it"
                 }
             }
@@ -119,8 +131,8 @@ class CartFragment : Fragment() {
                         } else {
                             hideEmptyCart()
                             showOtherViews()
-                           // cartProductAdapter.diffCart.submitList(it.dataUser)
-                            cartProductAdapter.setLista(it.dataUser.toMutableList())
+                            // cartProductAdapter.diffCart.submitList(it.dataUser)
+                            cartProductAdapter.setListaPrograma(it.dataUser.toMutableList())
                         }
                     }
 

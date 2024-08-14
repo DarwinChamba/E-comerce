@@ -21,8 +21,8 @@ class CartProductAdapter:RecyclerView.Adapter<CartProductViewHolder>() {
     }
     val diffCart=AsyncListDiffer(this,userDiff)
 
-    private var lista= mutableListOf<CartProduct>()
-    fun setLista(list:MutableList<CartProduct>){
+    var lista= listOf<CartProduct>()
+    fun setListaPrograma(list:List<CartProduct>){
         lista=list
         notifyDataSetChanged()
     }
@@ -34,6 +34,7 @@ class CartProductAdapter:RecyclerView.Adapter<CartProductViewHolder>() {
     }
 
     override fun getItemCount()=lista.size
+
     private var setCartProduct :((CartProduct)->Unit)? = null
     var onPlusClick :((CartProduct)->Unit)? = null
     var onMinClick :((CartProduct)->Unit)? = null

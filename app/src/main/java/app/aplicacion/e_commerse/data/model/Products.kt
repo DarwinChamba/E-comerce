@@ -1,8 +1,10 @@
 package app.aplicacion.e_commerse.data.model
 
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import java.io.Serializable
-
+@Parcelize
 data class Products(
     val id: String,
     val name: String,
@@ -14,6 +16,6 @@ data class Products(
     val sizes: List<String>? = null,
     val images: List<String>
 
-):Serializable{
+):Parcelable{
     constructor():this("","","", images = emptyList())
 }

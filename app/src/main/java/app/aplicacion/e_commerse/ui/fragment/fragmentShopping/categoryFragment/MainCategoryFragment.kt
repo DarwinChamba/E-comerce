@@ -63,7 +63,7 @@ class MainCategoryFragment : Fragment() {
     private fun sentSpecialProducts() {
        cadapter.setOnClickSpecialProducts {
             val bundle=Bundle().apply {
-                putSerializable("products",it)
+                putParcelable("products",it)
 
             }
             findNavController().navigate(R.id.action_homeFragment_to_detailsFragment,bundle)
@@ -74,7 +74,7 @@ class MainCategoryFragment : Fragment() {
     private fun sendBestProduct() {
         adapterProduct.setOnClickBestProducts {
             val bundle=Bundle().apply {
-                putSerializable("products",it)
+                putParcelable("products",it)
 
             }
             findNavController().navigate(R.id.action_homeFragment_to_detailsFragment,bundle)
@@ -85,7 +85,7 @@ class MainCategoryFragment : Fragment() {
     private fun sendProducts() {
         adapterBestDeals.setOnClickDealsProducts{
             val bundle=Bundle().apply {
-                putSerializable("products",it)
+                putParcelable("products",it)
 
             }
             findNavController().navigate(R.id.action_homeFragment_to_detailsFragment,bundle)

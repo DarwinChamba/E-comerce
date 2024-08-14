@@ -29,7 +29,9 @@ class DetailsFragment : Fragment() {
     private lateinit var sizesAdapter: SizesAdapter
     private lateinit var colorAdapter: ColorsAdapters
     private lateinit var viewPagerAdapter: ViewPager2ImageAdapter
+
     private val args by navArgs<DetailsFragmentArgs>()
+
     private var selectedColor: Int? = null
     private var selectedSize: String? = null
     private lateinit var viewmodel :DetailsViewModel
@@ -44,6 +46,7 @@ class DetailsFragment : Fragment() {
         viewmodel=ViewModelProvider(requireActivity()).get(DetailsViewModel::class.java)
         initViewPager()
         initProducts()
+
         binding.closeImage.setOnClickListener {
             findNavController().navigateUp()
         }

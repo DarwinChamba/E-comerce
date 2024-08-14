@@ -7,10 +7,9 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.firestore.FirebaseFirestore
+
 import kotlinx.coroutines.tasks.await
-import org.checkerframework.checker.units.qual.s
+
 import java.lang.Exception
 import javax.inject.Inject
 
